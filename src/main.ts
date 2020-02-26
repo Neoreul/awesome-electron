@@ -1,8 +1,10 @@
 // app/main.js
 
 // Module to control application life.
-const {app, BrowserWindow} = require('electron');
-const path = require('path');
+import { app, BrowserWindow } from 'electron';
+import * as path from 'path';
+
+let mainWindow: BrowserWindow;
 
 let createWindow = () => {
   // Create the browser window.
@@ -18,7 +20,7 @@ let createWindow = () => {
   mainWindow.loadFile('index.html');
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
